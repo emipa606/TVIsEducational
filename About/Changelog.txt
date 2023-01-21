@@ -1,4 +1,7 @@
 # Changelog for TVIsEducational
 
+1.4.1 - Fixed spelling
+
+
 1.4.0 - First publish
 
