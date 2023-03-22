@@ -1,5 +1,8 @@
 # Changelog for TVIsEducational
 
+1.4.2 - Should now only affect pawns lying down
+
+
 1.4.1 - Fixed spelling
 
 

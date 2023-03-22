@@ -32,5 +32,4 @@ Supports tv/radios from the following mods:
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2921021769]Last updated 2023-01-21
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2921021769]Last updated 2023-03-22

@@ -140,7 +140,7 @@ public class CompTVIsEducational : ThingComp
     public bool IsValidPawn(Pawn pawn)
     {
         return pawn.DevelopmentalStage.Child() && pawn.learning != null && pawn.Awake() && !pawn.Dead &&
-               !pawn.IsBurning() && !pawn.InMentalState;
+               !pawn.IsBurning() && !pawn.InMentalState && pawn.GetPosture().Laying();
     }
 
     public bool IsValidCell(IntVec3 cell, Building tv)
@@ -151,7 +151,7 @@ public class CompTVIsEducational : ThingComp
 
     public bool isFunctional(Building tv)
     {
-        return !tv.DestroyedOrNull() && tv is { Map: { }, Spawned: true } &&
+        return !tv.DestroyedOrNull() && tv is { Map: not null, Spawned: true } &&
                tv.TryGetComp<CompPowerTrader>().PowerOn && !tv.IsBrokenDown();
     }
 }
