@@ -1,5 +1,8 @@
 # Changelog for TVIsEducational
 
+1.4.3 - Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2288125657]Vanilla Achievements Expanded[/url]
+
+
 1.4.2 - Should now only affect pawns lying down
 
 

@@ -1,6 +1,6 @@
 # TVIsEducational
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://i.imgur.com/iCj5o7O.png)
 
 
 TV can be educational for children, depending on the show of course. 
@@ -20,7 +20,14 @@ Supports tv/radios from the following mods:
 
 
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://i.imgur.com/Ds0rBAD.png)
+
+Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my https://store.steampowered.com/wishlist/id/Mlie]Wishlist or buy me a cup of tea.
+
+https://ko-fi.com/G2G55DDYD]![Image](https://i.imgur.com/VWG0yff.png)
+
+
+![Image](https://i.imgur.com/5xwDG6H.png)
 
 
 
@@ -32,4 +39,4 @@ Supports tv/radios from the following mods:
 -  If you have the solution for a problem, please post it to the GitHub repository.
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2921021769]Last updated 2023-03-22
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2921021769]Last updated 2023-04-14

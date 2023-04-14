@@ -7,14 +7,13 @@ namespace TVIsEducational;
 
 public class CompTVIsEducational : ThingComp
 {
+    private const int tickPeriod = 2500;
     public CompProperties_TVIsEducational Props => (CompProperties_TVIsEducational)props;
 
     public Building TV => parent as Building;
 
-
     public override void CompTick()
     {
-        var tickPeriod = 2500;
         base.CompTick();
         if (Find.TickManager.TicksGame % tickPeriod != 0 || !isFunctional(TV))
         {
@@ -131,10 +130,13 @@ public class CompTVIsEducational : ThingComp
         }
 
         var tvdef = DefDatabase<ThoughtDef>.GetNamed("TVIsEducational", false);
-        if (tvdef != null)
+        if (tvdef == null)
         {
-            pawn.needs.mood.thoughts.memories.TryGainMemory(tvdef);
+            return;
         }
+
+        pawn.needs.mood.thoughts.memories.TryGainMemory(tvdef);
+        Current.Game.GetComponent<GameComponent_TVTimeTracker>().seenTvTicks += tickPeriod;
     }
 
     public bool IsValidPawn(Pawn pawn)
