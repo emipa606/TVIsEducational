@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVIsEducational", "TVIsEducational\TVIsEducational.csproj", "{4EA3A86D-6C55-4CAE-AF74-D92A0FAB93B8}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TVIsEducational", "TVIsEducational\TVIsEducational.csproj", "{4EA3A86D-6C55-4CAE-AF74-D92A0FAB93B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AchievementsExpanded_TVIsEducational", "AchievementsExpanded\AchievementsExpanded_TVIsEducational.csproj", "{C143F53C-129A-47CB-ABCA-89E6596C3386}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +17,15 @@ Global
 		{4EA3A86D-6C55-4CAE-AF74-D92A0FAB93B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EA3A86D-6C55-4CAE-AF74-D92A0FAB93B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EA3A86D-6C55-4CAE-AF74-D92A0FAB93B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C143F53C-129A-47CB-ABCA-89E6596C3386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C143F53C-129A-47CB-ABCA-89E6596C3386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C143F53C-129A-47CB-ABCA-89E6596C3386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C143F53C-129A-47CB-ABCA-89E6596C3386}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DF44E97-FC41-4476-B800-3145056EB00F}
 	EndGlobalSection
 EndGlobal
