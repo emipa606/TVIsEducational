@@ -7,15 +7,15 @@ namespace TVIsEducational;
 
 public class CompTVIsEducational : ThingComp
 {
-    private const int tickPeriod = 2500;
-    public CompProperties_TVIsEducational Props => (CompProperties_TVIsEducational)props;
+    private const int TickPeriod = 2500;
+    private CompProperties_TVIsEducational Props => (CompProperties_TVIsEducational)props;
 
-    public Building TV => parent as Building;
+    private Building TV => parent as Building;
 
     public override void CompTick()
     {
         base.CompTick();
-        if (Find.TickManager.TicksGame % tickPeriod != 0 || !isFunctional(TV))
+        if (Find.TickManager.TicksGame % TickPeriod != 0 || !isFunctional(TV))
         {
             return;
         }
@@ -33,7 +33,7 @@ public class CompTVIsEducational : ThingComp
 
         foreach (var cell in list)
         {
-            if (!IsValidCell(cell, TV))
+            if (!isValidCell(cell, TV))
             {
                 continue;
             }
@@ -51,7 +51,7 @@ public class CompTVIsEducational : ThingComp
                     continue;
                 }
 
-                if (!IsValidPawn(pawn))
+                if (!isValidPawn(pawn))
                 {
                     continue;
                 }
@@ -100,21 +100,19 @@ public class CompTVIsEducational : ThingComp
 
                 if (!(Math.Min(1f, factor) > 0f))
                 {
-                    Log.Message($"Too small factor {factor} for {pawn}");
                     continue;
                 }
 
                 var value = 0.015f * LearningUtility.LearningRateFactor(pawn) * factor;
-                Log.Message($"Giving {pawn} learning: {value}");
 
                 pawn.needs.learning.Learn(value);
 
-                GiveTVThought(pawn);
+                giveTVThought(pawn);
             }
         }
     }
 
-    public void GiveTVThought(Pawn pawn)
+    private static void giveTVThought(Pawn pawn)
     {
         if (pawn == null)
         {
@@ -129,29 +127,29 @@ public class CompTVIsEducational : ThingComp
             return;
         }
 
-        var tvdef = DefDatabase<ThoughtDef>.GetNamed("TVIsEducational", false);
-        if (tvdef == null)
+        var tvDef = DefDatabase<ThoughtDef>.GetNamed("TVIsEducational", false);
+        if (tvDef == null)
         {
             return;
         }
 
-        pawn.needs.mood.thoughts.memories.TryGainMemory(tvdef);
-        Current.Game.GetComponent<GameComponent_TVTimeTracker>().seenTvTicks += tickPeriod;
+        pawn.needs.mood.thoughts.memories.TryGainMemory(tvDef);
+        Current.Game.GetComponent<GameComponent_TVTimeTracker>().SeenTvTicks += TickPeriod;
     }
 
-    public bool IsValidPawn(Pawn pawn)
+    private static bool isValidPawn(Pawn pawn)
     {
         return pawn.DevelopmentalStage.Child() && pawn.learning != null && pawn.Awake() && !pawn.Dead &&
                !pawn.IsBurning() && !pawn.InMentalState && pawn.GetPosture().Laying();
     }
 
-    public bool IsValidCell(IntVec3 cell, Building tv)
+    private static bool isValidCell(IntVec3 cell, Building tv)
     {
         return cell.IsValid && cell.InBounds(tv.Map);
     }
 
 
-    public bool isFunctional(Building tv)
+    private static bool isFunctional(Building tv)
     {
         return !tv.DestroyedOrNull() && tv is { Map: not null, Spawned: true } &&
                tv.TryGetComp<CompPowerTrader>().PowerOn && !tv.IsBrokenDown();

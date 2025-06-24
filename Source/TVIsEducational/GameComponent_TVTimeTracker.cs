@@ -4,7 +4,7 @@ namespace TVIsEducational;
 
 public class GameComponent_TVTimeTracker : GameComponent
 {
-    public int seenTvTicks;
+    public int SeenTvTicks;
 
     public GameComponent_TVTimeTracker(Game game)
     {
@@ -13,6 +13,6 @@ public class GameComponent_TVTimeTracker : GameComponent
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Values.Look(ref seenTvTicks, "seenTvTicks");
+        Scribe_Values.Look(ref SeenTvTicks, "seenTvTicks");
     }
 }

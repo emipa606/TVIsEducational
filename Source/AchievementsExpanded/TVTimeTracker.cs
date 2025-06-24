@@ -7,9 +7,9 @@ namespace TVIsEducational;
 
 public class TVTimeTracker : TrackerBase
 {
-    public int count = 1;
+    private int count = 1;
 
-    [Unsaved] protected int triggeredTicks; //Only for display
+    [Unsaved] private int triggeredTicks; //Only for display
 
     public TVTimeTracker()
     {
@@ -20,15 +20,11 @@ public class TVTimeTracker : TrackerBase
         count = reference.count;
     }
 
-    public override string Key
-    {
-        get => "TVTimeCurrentTracker";
-        set { }
-    }
+    public override string Key => "TVTimeCurrentTracker";
 
     public override Func<bool> AttachToLongTick => Trigger;
 
-    protected override string[] DebugText => new[] { $"Count: {count}" };
+    protected override string[] DebugText => [$"Count: {count}"];
 
     public override (float percent, string text) PercentComplete => count > 1
         ? ((float)triggeredTicks / GenDate.TicksPerHour / count,
@@ -48,7 +44,7 @@ public class TVTimeTracker : TrackerBase
     public override bool Trigger()
     {
         base.Trigger();
-        triggeredTicks = Current.Game.GetComponent<GameComponent_TVTimeTracker>().seenTvTicks;
+        triggeredTicks = Current.Game.GetComponent<GameComponent_TVTimeTracker>().SeenTvTicks;
 
         return triggeredTicks / GenDate.TicksPerHour >= count;
     }

@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="AchievementsExpanded/AchievementsExpanded_TVIsEducational.csproj" />
+  <Project Path="TVIsEducational/TVIsEducational.csproj" />
+</Solution>
