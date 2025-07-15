@@ -20,7 +20,11 @@ public class TVTimeTracker : TrackerBase
         count = reference.count;
     }
 
-    public override string Key => "TVTimeCurrentTracker";
+    public override string Key
+    {
+        get => "TVTimeCurrentTracker";
+        set { }
+    }
 
     public override Func<bool> AttachToLongTick => Trigger;
 
